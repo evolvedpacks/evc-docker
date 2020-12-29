@@ -1,6 +1,6 @@
 FROM openjdk:8-alpine
 
-ARG VERSION=release/latest
+ARG VERSION=latest
 
 ENV XMS=1G
 ENV XMX=3G
@@ -11,7 +11,7 @@ WORKDIR /var/server
 
 RUN curl -X GET -L \
         -o server.tar.gz \
-        https://cdn.zekro.de/modpacks/evolved-combat/${VERSION}/server.tar.gz && \
+        https://cdn.zekro.de/modpacks/evolved-combat/release/server/evolved-combat-server-${VERSION}.tar.gz && \
     tar -xzf server.tar.gz &&\
     rm -f server.tar.gz
 
